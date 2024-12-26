@@ -5,7 +5,15 @@ let socket: Socket;
 export const connectToServer = (token: string) => {
     //http://localhost:3000/socket.io/socket.io.js
 
-    const manager = new Manager('http://localhost:3000/socket.io/socket.io.js', {
+    //!Configuracion para LOCALHOST
+    // const manager = new Manager('http://localhost:3000/socket.io/socket.io.js', {
+    //     extraHeaders: {
+    //         authentication: token
+    //     }
+    // });
+
+    //!Configuracion para DESPLIEGUE EN HOSTING
+    const manager = new Manager('https://websocket-server1-482821517109.herokuapp.com/socket.io/socket.io.js', {
         extraHeaders: {
             authentication: token
         }
